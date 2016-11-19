@@ -10,6 +10,7 @@ Start by creating a [Heroku Account](https://toolbelt.heroku.com/).
 Since we're only interested in a simple HTML website, we'll be using PHP as our server-side language. We first need to install a few things.
 
 #### 1. Install [PHP](http://php.net/)
+You only do this once to your computer. 
 
 #### 2. Get [Composer](https://getcomposer.org/download/)
 Composer is a dependency manager for PHP. We will need it to obtain the Heroku dependencies for our project. 
@@ -23,6 +24,9 @@ php -r "unlink('composer-setup.php');"
 ```
 
 This will generate a composer.phar file which you will be able to use in any PHP project to install dependencies. 
+
+</br>
+NOTE: If the commands above do not work, then go to the website itself to download the latest version. 
 
 #### 3. Obtain the [Heroku Toolbelt](https://toolbelt.heroku.com/)
 This will help you manage and deploy Heroku Apps.
@@ -45,47 +49,47 @@ $ cd myapp
 $ mkdir web
 ```
 
-Create a file called composer.json and populate it with the following code:
+Create a file called **composer.json** and populate it with the following code:
 
 ```json
 {
   "require-dev" : {
-  	"heroku/heroku-buildpack-php": "*"
+   "heroku/heroku-buildpack-php": "*"
   }
 }
 ```
 
 This file is what Composer uses to download the dependencies. 
-In order to download the dependancies, copy the composer.phar file we generated earlier to this 'myapp' folder and run the following command:
+In order to download the dependancies, copy the composer.phar file we generated earlier to this **myapp folder** and run the following command:
 
 ```
 $ php composer.phar install
 ```
 
-After the dependancies are created, create an index.php file in the 'web' folder, populate it with the following code:
+After the dependancies are created, create an index.php file in the **web folder**, populate it with the following code:
 
 ```PHP
 <?php include_once("index.html");?>
 ```
 
 All this script does is tell the server to load the index.html file when someone accesses the website. Create an index.html file in the same 'web' folder. 
-The following is just an example, you will use your own <a> link when populating your own index.html
+The following is just an example, you will use your own code when populating your own index.html
 
 ```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>Random title</title>
+   <meta charset="UTF-8">
+   <title>Random title</title>
 </head>
 <body>
-	<p>Hello World!</p>
+   <p>Hello World!</p>
 </body>
 </html>
 ```
 
-Finally, before we can deploy on Heroku, we need to create one more file called Procfile in the main 'myapp' folder.
-Put the following line in the Procfile:
+Finally, before we can deploy on Heroku, we need to create one more file called Procfile in the main **myapp folder**.
+Put the following line in a file called Procfile:
 
 ```
 web: vendor/bin/heroku-php-apache2 web/
@@ -102,6 +106,7 @@ When your app is deployed on Heroku, this file tells the server how to run your 
             -> [heroku/heroku-buildpack]
             -autoload.pho
         -> [web]
+            -> YOUR WEBSITE (HTML, CSS & JS)
         -> Procfile
         -> composer.json
         -> composer.loc
@@ -109,7 +114,8 @@ When your app is deployed on Heroku, this file tells the server how to run your 
         
  Note: [] remembles file names.
         
-
+#### Adjust your directory
+Make sure your terminal directory is in the right place. 
 
 #### Deploy!
 You are finally ready to deploy your project. 
@@ -130,7 +136,7 @@ $ heroku create
 Deploy your project by pushing to the Heroku remote:
 
 ```
-$ git push heroku remote
+$ git push heroku master
 ```
 
 View your project in a browser!
@@ -138,7 +144,6 @@ View your project in a browser!
 ```
 $ heroku open
 ```
-
 
 
 
