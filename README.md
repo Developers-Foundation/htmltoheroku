@@ -112,7 +112,7 @@ When your app is deployed on Heroku, this file tells the server how to run your 
         -> composer.loc
         -> composer.phar
         
- Note: [] remembles file names.
+ Note: [] remembles folder names.
         
 #### Adjust your directory
 Make sure your terminal directory is in the right place. 
