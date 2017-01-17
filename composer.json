@@ -1,0 +1,21 @@
+{
+  "name": "developersfoundation/blank",
+  "description": "blank project",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Harrison Chow",
+      "email": "harrison@developersfoundation.ca"
+    }
+  ],
+
+  "require-dev" : {
+    "heroku/heroku-buildpack-php": "*"
+  },
+
+  "require": {
+    "ext-memcached": "*",
+    "sendgrid/sendgrid": "4.0.4"
+  }
+}

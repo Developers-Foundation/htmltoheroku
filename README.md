@@ -13,10 +13,13 @@ Since we're only interested in a simple HTML website, we'll be using PHP as our 
 
 - Heorku
 - Github
-- Optional but preferably JetBrains via this [link](https://www.jetbrains.com/shop/eform/students)
+- Optional but preferably JetBrains using their PHPStorm as the IDE via this [link](https://www.jetbrains.com/shop/eform/students)
 
-#### 0.5 Install Git
+#### 0.5 Install Git (Only required on Windows)
 
+1. (Download it here)[https://git-scm.com/download/win]
+2. Run it
+3. Open the Git Bash (now should be installed)
 
 #### 1. Install [PHP](http://php.net/)
 You only do this once to your computer.
@@ -36,8 +39,8 @@ brew install php70
 pico /etc/paths
 ```
 
-3. Make sure `/usr/local/bin` is above all other lines in that file
-4. Click Control+X -> Y -> Enter Key
+3. Make sure `/usr/local/bin` is above all other lines in that file, if not then move it there
+4. Click Control+X -> Y -> Enter Key to quit the editor
 5. Quit and restart terminal
 
 ##### Windows
@@ -51,22 +54,30 @@ Install composer for the local project by:
 2. Move it into the root of your project folder (the top folder of your git repo)
 3. Run `php composer.phar init`
 4. Follow the instructions on terminal
-5. Check the things inside the `composer.json` is correct then run `php composer.phar update`
+5. Add the following line into the composer.json, check the sample composer.json file for where to add this:
+
+```
+"require-dev" : {
+   "heroku/heroku-buildpack-php": "*"
+  }
+```
+
+6. Check the remaining things inside the `composer.json` is correct then run `php composer.phar update`
 
 
-#### 3. Obtain the [Heroku Toolbelt](https://toolbelt.heroku.com/)
+#### 3. Optional: Obtain the [Heroku Toolbelt](https://toolbelt.heroku.com/)
 This will help you manage and deploy Heroku Apps.
 Once downloaded, you can enter your Heroku credentials via the following command in your terminal:
 
 ```
-$ heroku login
+heroku login
 ```
 
 You are now ready to create your first Heroku App.
 
-### Create Heroku App 
+##### Create Heroku App 
 
-#### Setup
+##### Setup
 Create a folder where your Heroku project will reside. Create another folder (web) inside myapp, which will contain the actual code for your website (your HTML and CSS files):
 
 ```
