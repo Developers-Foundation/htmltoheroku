@@ -9,24 +9,50 @@ Start by creating a [Heroku Account](https://toolbelt.heroku.com/).
 
 Since we're only interested in a simple HTML website, we'll be using PHP as our server-side language. We first need to install a few things.
 
+#### 0. Setup the accounts required
+
+- Heorku
+- Github
+- Optional but preferably JetBrains via this [link](https://www.jetbrains.com/shop/eform/students)
+
+#### 0.5 Install Git
+
+
 #### 1. Install [PHP](http://php.net/)
-You only do this once to your computer. 
+You only do this once to your computer.
+
+##### Mac
+
+1. In the App Store install the newest version of XCode.
+2. On your terminal run:
+
+```
+brew update
+brew tap homebrew/dupes
+brew tap homebrew/versions
+brew tap homebrew/homebrew-php
+brew unlink php56
+brew install php70
+pico /etc/paths
+```
+
+3. Make sure `/usr/local/bin` is above all other lines in that file
+4. Click Control+X -> Y -> Enter Key
+5. Quit and restart terminal
+
+##### Windows
+Good luck :P Message Harrison to walk you through this.
 
 #### 2. Get [Composer](https://getcomposer.org/download/)
 Composer is a dependency manager for PHP. We will need it to obtain the Heroku dependencies for our project. 
-You can download and install composer from the terminal by running the following commands:
+Install composer for the local project by:
 
-```
-php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('SHA384', 'composer-setup.php') === 'aa96f26c2b67226a324c27919f1eb05f21c248b987e6195cad9690d5c1ff713d53020a02ac8c217dbf90a7eacc9d141d') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
-```
+1. Visit [getcomposer.org](http://getcomposer.org/download/) and download the latest `composer.phar`
+2. Move it into the root of your project folder (the top folder of your git repo)
+3. Run `php composer.phar init`
+4. Follow the instructions on terminal
+5. Check the things inside the `composer.json` is correct then run `php composer.phar update`
 
-This will generate a composer.phar file which you will be able to use in any PHP project to install dependencies. 
-
-</br>
-NOTE: If the commands above do not work, then go to the website itself to download the latest version. 
 
 #### 3. Obtain the [Heroku Toolbelt](https://toolbelt.heroku.com/)
 This will help you manage and deploy Heroku Apps.
