@@ -26,6 +26,7 @@ You only do this once to your computer.
 
 ##### Mac
 
+0. If HomeBrew is not installed yet run `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
 1. In the App Store install the newest version of XCode.
 2. On your terminal run:
 
