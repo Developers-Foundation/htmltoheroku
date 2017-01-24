@@ -47,6 +47,12 @@ pico /etc/paths
 ##### Windows
 Good luck :P Message Harrison to walk you through this.
 
+1. Download php from [here](http://windows.php.net/download) (I suggest sticking with 7.0 builds for now, and go with thread-safe, since you won't be doing much heavy compiling)
+2. Unzip the content from into C://php/ (You will have to make the folder if you haven't installed before). If you want to enable multi-ver builds, use this structure: C://php/php56 and C://php/php70
+3. Change the file name of php.ini-developement or php.ini-stable into php.ini
+4. Setup environment variable in control panel (You can find this by searching it)
+5. Start Git Bash and try `php -v`, if it says `Command not found.`, run `echo $PATH` and make sure `C:/php/` is in the list. If not add it by using `export PATH=$PATH:C/php` (Note: I don't have pc, so setting this might be diff)
+
 #### 2. Get [Composer](https://getcomposer.org/download/)
 Composer is a dependency manager for PHP. We will need it to obtain the Heroku dependencies for our project. 
 Install composer for the local project by:
@@ -54,7 +60,7 @@ Install composer for the local project by:
 1. Visit [getcomposer.org](http://getcomposer.org/download/) and download the latest `composer.phar`
 2. Move it into the root of your project folder (the top folder of your git repo)
 3. Run `php composer.phar init`
-4. Follow the instructions on terminal
+4. Follow the instructions on terminal (If not required, you can have most fields blank)
 5. Add the following line into the composer.json, check the sample composer.json file for where to add this:
 
 ```
@@ -75,6 +81,29 @@ heroku login
 ```
 
 You are now ready to create your first Heroku App.
+
+#### 4. Upload to GitHub then Heroku
+
+1. Log into GitHub and make a new repository using the green button. Name it what you want, and don't add readme, or any other files
+2. Click create then copy out the link of the repository
+3. On your GitBash and inside the directory (use `cd folderName` to navigate to the root of the folder, run `git init`
+4. Run the following commands:
+
+```
+git remote add origin pasteInTheURLHere
+git add .
+git commit -m "hello world :P"
+git push -u origin master
+```
+
+5. The folder is now setup, and you should see your files in GitHub
+6. Setup the Heroku website by making a new app on Heroku. Just fill in the form to your liking, and once done, visit the deploy section. Click GitHub for the source of the code, connect your GitHub account, and search the repository name under the field. Then click enable automatic deploy.
+7. Click Deploy Branch to create the first website. If something goes wrong at this step, good idea to contact Harrison (Everything is case by case, and you may have hit a bug in above steps)
+8. Click view to see your first website 
+
+#### AND YOU ARE DONE :P
+
+## FOLLOWING STEPS BELOW IS DEPRECATED.
 
 ##### Create Heroku App 
 
