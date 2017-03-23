@@ -5,16 +5,24 @@ This mini-tutorial will guide you through the process of hosting your HTML webis
 
 ## 0. Setup the accounts required
 
-- [Heorku](https://www.heroku.com/)
+- [Heroku](https://www.heroku.com/)
 - [Github](https://github.com/)
 
-## 0.5 Install Git (Only required on Windows)
+## 1. Install Git
 
-1. (Download it here)[https://git-scm.com/download/win]
-2. Run it
-3. Open the Git Bash (this is your terminal on Windows)
+### Linux
+```
+sudo apt-get install git
+```
 
-## 1. Upload your code to GitHub
+### Windows
+Download and run the installer from [here](https://git-scm.com/download/win).
+Once you've completed the isntallation, a program called Git Bash will be installed on your system. This is a Linux-like terminal for windows and you will be using this terminal for the rest of the guide.
+
+### macOS
+Just try to run `git` from the terminal. If you dont already have it installed, it will prompt you to install it.
+
+## 2. Upload your code to GitHub
 
 1. Log into GitHub and make a new repository using the green button. Name it what you want, and don't add readme, or any other files
 2. Click create then copy out the link of the repository
@@ -30,7 +38,7 @@ git push -u origin master
 
 5. The folder is now setup, and you should see your files in GitHub
 
-## 2. Prepare your app to be deployed
+## 3. Prepare your app to be deployed
 
 All these steps are done in the root directory:
 1. Rename your index.html (or whatever you named your homepage) to home.html
@@ -41,7 +49,7 @@ All these steps are done in the root directory:
 
 You should see these new files on Github.
 
-## 3. Deploy to Heroku
+## 4. Deploy to Heroku
 
 There are two ways to deploy your code to Heroku. Either through the command line or through the web interface. We will walk you through both
 
@@ -53,7 +61,7 @@ There are two ways to deploy your code to Heroku. Either through the command lin
 5. Scroll all the way down to Manual Deploy and click on Deploy Branch. A build log will show up. Wait for it to finish.
 6. Once it's done, click on the view button to see your website
 
-### B. Through the commandline
+### B. Through the terminal
 
 For this method, we will need another software called Heroku CLI. You can find instructions on how to set it up [here](https://devcenter.heroku.com/articles/heroku-cli)
 
