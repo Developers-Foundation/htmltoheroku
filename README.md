@@ -24,19 +24,19 @@ Just try to run `git` from the terminal. If you dont already have it installed, 
 
 ## 2. Upload your code to GitHub
 
-1. Log into GitHub and make a new repository using the green button. Name it what you want, and don't add readme, or any other files
-2. Click create then copy out the link of the repository
-3. On your GitBash and inside the directory (use `cd folderName` to navigate to the root of the folder, run `git init`
-4. Run the following commands:
-
+1. After logging into GitHub, create a new repository using the green button. 
+2. Name it what you want, and don't add readme, or any other files
+2. Click create then copy the URL of your repository (you will need it in the first command below)
+3. In your terminal, [navigate](https://www.digitalocean.com/community/tutorials/basic-linux-navigation-and-file-management) to the root folder of your website
+4. Initialize your repo: `git init`
+5. Add Github as a remote (make sure to add the URL you copied earlier): `git remote add origin REPLACE_WITH_REPO_URL`
+6. Now run the following commands to add, commit and push your code to Github:
 ```
-git remote add origin pasteInTheURLHere
 git add .
 git commit -m "initial commit"
 git push -u origin master
 ```
-
-5. The folder is now setup, and you should see your files in GitHub
+Now go back to your Github page and open the repository you just created (make sure to refresh). All your code should be there
 
 ## 3. Prepare your app to be deployed
 
@@ -75,4 +75,4 @@ Once you have that installed:
 6. Make sure that at least one server is running: `heroku ps:scale web=1`
 7. View your website in the browser: `heroku open`
 
-## AND YOU ARE DONE :D
+## And you are done :D
